@@ -3,7 +3,7 @@ var mongoose = require('mongoose');
 module.exports = mongoose.model('Incidencia', {
     laboratorio: String,
     maquina: String,
-    fallas: [{
+    falla: {
         fecha: { type: Date, default: Date.now },
         sistemaOperativo: {
             nombre: String,
@@ -22,5 +22,5 @@ module.exports = mongoose.model('Incidencia', {
             fecha: Date,
             descripcion: String
         }
-    }]
+    }
 });
