@@ -7,7 +7,7 @@ module.exports = mongoose.model('Incidencia', {
         fecha: { type: Date, default: Date.now },
         sistemaOperativo: {
             nombre: String,
-            virtual: Boolean,
+            virtual: { type: Boolean, default: false },
             comentario: String
         },
         codigo: String,
