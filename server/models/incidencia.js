@@ -2,7 +2,7 @@ var mongoose = require('mongoose');
 
 module.exports = mongoose.model('Incidencia', {
     laboratorio: String,
-    pc: String,
+    maquina: String,
     sistemaOperativo: {
         nombre: String,
         virtual: Boolean,
