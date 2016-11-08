@@ -77,7 +77,7 @@ module.exports.upsert = function (req, res) {
     if(req.body._id) {
         delete req.body._id;
     }
-    return Incidencia.findOneAndUpdate(req.params.id, req.body, {upsert: true, setDefaultsOnInsert: true, runValidators: true}).exec()
+    return Incidencia.findOneAndUpdate({_id : req.params.id}, req.body, {upsert: true, setDefaultsOnInsert: true, runValidators: true}).exec()
 
         .then(respondWithResult(res))
         .catch(handleError(res));

@@ -5,6 +5,7 @@ module.exports = mongoose.model('Incidencia', {
     maquina: String,
     falla: {
         fecha: { type: Date, default: Date.now },
+        grupo: String,
         sistemaOperativo: {
             nombre: String,
             virtual: { type: Boolean, default: false },
@@ -20,7 +21,9 @@ module.exports = mongoose.model('Incidencia', {
         }],
         solucion: {
             fecha: Date,
-            descripcion: String
+            descripcion: String,
+            grupo: String,
+            aprobado: {type: Boolean, default: false}
         }
     }
 });
